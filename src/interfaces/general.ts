@@ -1,3 +1,3 @@
-export interface ChildrenProp {
+export interface Children {
   children: React.ReactNode;
 }

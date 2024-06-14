@@ -3,9 +3,9 @@
 import { useMemo } from "react";
 import { CssBaseline, PaletteMode, ThemeProvider, useMediaQuery } from "@mui/material";
 import getTheme from "@/styles/theme";
-import { ChildrenProp } from "@/interfaces/general";
+import { Children } from "@/interfaces/general";
 
-export default function Theme({ children }: ChildrenProp) {
+export default function Theme({ children }: Children) {
   const defaultMode = useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
 
   const theme = useMemo(() => {

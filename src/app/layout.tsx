@@ -3,11 +3,11 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Provider } from "jotai";
 import "./globals.css";
-import { ChildrenProp } from "@/interfaces/general";
+import { Children } from "@/interfaces/general";
 import Theme from "./Theme";
 import AppLayout from "./AppLayout";
 
-export default function RootLayout({ children }: ChildrenProp) {
+export default function RootLayout({ children }: Children) {
   return (
     <html lang="en">
       <body>
