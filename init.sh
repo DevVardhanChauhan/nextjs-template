@@ -12,4 +12,4 @@ git reset init.sh
 
 git commit -m "Init"
 
-rm clone.sh
+rm init.sh
