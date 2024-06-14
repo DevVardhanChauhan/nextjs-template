@@ -1,25 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
-import { CssBaseline, PaletteMode, ThemeProvider, useMediaQuery } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import getTheme from "@/styles/theme";
 import { Children } from "@/interfaces/general";
 
 export default function Theme({ children }: Children) {
-  const defaultMode = useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
-
-  const theme = useMemo(() => {
-    try {
-      if (!localStorage.getItem("theme")) localStorage.setItem("theme", JSON.stringify(defaultMode));
-      const paletteMode = JSON.parse(localStorage.getItem("theme") || defaultMode) as PaletteMode;
-      return getTheme(paletteMode);
-    } catch {
-      return getTheme("light");
-    }
-  }, [defaultMode]);
-
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={getTheme()}>
       <CssBaseline />
       {children}
     </ThemeProvider>

@@ -2,9 +2,8 @@
 
 import { Roboto } from "next/font/google";
 import { Theme, createTheme } from "@mui/material/styles";
-import { PaletteMode } from "@mui/material";
 import components from "./components";
-import getPalette from "./palette";
+import palette from "./palette";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -12,14 +11,12 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export default function getTheme(mode: PaletteMode): Theme {
-  const palette = getPalette(mode);
-
+export default function getTheme(): Theme {
   return createTheme({
     typography: {
       fontFamily: roboto.style.fontFamily,
     },
-    palette,
     components,
+    palette,
   });
 }

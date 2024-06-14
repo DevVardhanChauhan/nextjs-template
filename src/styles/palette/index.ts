@@ -1,13 +1,5 @@
-import { PaletteMode, PaletteOptions } from "@mui/material";
-import lightPalette from "./light";
-import darkPalette from "./dark";
+import { PaletteOptions } from "@mui/material";
 
-export default function getPalette(mode: PaletteMode): PaletteOptions {
-  switch (mode) {
-    case "dark":
-      return darkPalette;
-    case "light":
-    default:
-      return lightPalette;
-  }
-}
+const palette: PaletteOptions = {};
+
+export default palette;
